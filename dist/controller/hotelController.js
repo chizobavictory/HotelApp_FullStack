@@ -16,10 +16,10 @@ async function createHotels(req, res, next) {
             });
         }
         const record = await hotel_1.hotelInstance.create({ id, ...req.body, userId });
-        // res.status(201).json({
-        //     msg: "you have sucessfully created a hotel listing",
-        //     record
-        // })
+        res.status(201).json({
+            msg: "you have sucessfully created a hotel listing",
+            record
+        });
         res.redirect("/users/listing1");
     }
     catch (err) {

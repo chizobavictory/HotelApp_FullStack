@@ -7,6 +7,7 @@ export async function auth(req:Request |any, res:Response, next:NextFunction){
     const authorization = req.cookies.auth
     //console.log(req.cookies)
     try {
+        
         if(!authorization){
             res.status(401).send({
                 Error: 'Kindly sign in as a user'

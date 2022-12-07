@@ -1,5 +1,5 @@
 # EXPRESS
-
+Hotel app built with express and sqlite database, server side rendering...
 ### Setup
 
 1. Use and setup the project with `yarn`.

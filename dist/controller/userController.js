@@ -17,13 +17,13 @@ async function registerUsers(req, res, next) {
         const validationResult = utils_1.registerSchema.validate(req.body, utils_1.options);
         if (validationResult.error) {
             return res.status(400).json({
-                Error: validationResult.error.details[0].message
+                Error: validationResult.error.details[0].message,
             });
         }
         const emailDuplicates = await user_1.UserInstance.findOne({ where: { email: req.body.email } });
         if (emailDuplicates) {
             return res.status(409).json({
-                msg: "Email has been used, please change email"
+                msg: "Email has been used, please change email",
             });
         }
         const phoneNoDuplicates = await user_1.UserInstance.findOne({ where: { phoneNumber: req.body.phoneNumber } });
@@ -48,8 +48,8 @@ async function registerUsers(req, res, next) {
     catch (err) {
         console.log(err);
         res.status(500).json({
-            msg: 'failed to register',
-            route: '/register'
+            msg: "failed to register",
+            route: "/register",
         });
     }
 }
@@ -60,16 +60,16 @@ async function loginUser(req, res, next) {
         const validationResult = utils_1.loginSchema.validate(req.body, utils_1.options);
         if (validationResult.error) {
             return res.status(400).json({
-                Error: validationResult.error.details[0].message
+                Error: validationResult.error.details[0].message,
             });
         }
-        const hotelUser = await user_1.UserInstance.findOne({ where: { email: req.body.email } });
+        const hotelUser = (await user_1.UserInstance.findOne({ where: { email: req.body.email } }));
         const { id } = hotelUser;
         const token = (0, utils_1.generateToken)({ id });
         res.cookie("auth", token, { httpOnly: true, secure: true });
         res.cookie("id", id, {
             httpOnly: true,
-            secure: true
+            secure: true,
         });
         const validHotelUser = await bcryptjs_1.default.compare(req.body.password, hotelUser.password);
         if (!validHotelUser) {
@@ -83,13 +83,13 @@ async function loginUser(req, res, next) {
             //     token,
             //     hotelUser
             // })
-            res.redirect('/users/home');
+            res.redirect("/users/home");
         }
     }
     catch (error) {
         res.status(500).json({
             message: "failed to login",
-            route: "/login"
+            route: "/login",
         });
     }
 }
@@ -99,61 +99,65 @@ async function getUsers(req, res, next) {
         const limit = req.query?.limit;
         const offset = req.query?.offset;
         //const record = await hotelInstance.findAll({where: {}})
-        const record = await user_1.UserInstance.findAndCountAll({ limit, offset, include: [{
+        const record = await user_1.UserInstance.findAndCountAll({
+            limit,
+            offset,
+            include: [
+                {
                     model: hotel_1.hotelInstance,
-                    as: 'hotel'
-                }]
+                    as: "hotel",
+                },
+            ],
         });
         res.status(200).json({
             msg: "All Hotels fetched successfully",
             count: record.count,
-            record: record.rows
+            record: record.rows,
         });
     }
     catch (error) {
         res.status(500).json({
             msg: "failed to fetch hotels",
-            route: "/read"
+            route: "/read",
         });
     }
 }
 exports.getUsers = getUsers;
 function logout(req, res) {
-    res.clearCookie('auth');
-    res.clearCookie('id');
+    res.clearCookie("auth");
+    res.clearCookie("id");
     res.status(200).json({
-        message: "you have successfully logged out"
+        message: "you have successfully logged out",
     });
     // res.redirect('/signin')
 }
 exports.logout = logout;
 async function renderRegisterPage(req, res, next) {
-    res.render('register');
+    res.render("register");
 }
 exports.renderRegisterPage = renderRegisterPage;
 async function renderLoginPage(req, res, next) {
-    res.render('login');
+    res.render("login");
 }
 exports.renderLoginPage = renderLoginPage;
 async function renderHomePage(req, res, next) {
-    res.render('home');
+    res.render("home");
 }
 exports.renderHomePage = renderHomePage;
 async function renderListingPage(req, res, next) {
     try {
-        const user = await user_1.UserInstance.findOne({ where: { id: req.cookies.id }, include: [{ model: hotel_1.hotelInstance, as: 'hotels' }] });
-        res.render('listing1', { user });
+        const user = await user_1.UserInstance.findOne({ where: { id: req.cookies.id }, include: [{ model: hotel_1.hotelInstance, as: "hotels" }] });
+        res.render("listing1", { user });
     }
     catch (error) {
         console.log(error);
-        res.status(500).json({ message: 'failed to render listing1' });
+        res.status(500).json({ message: "failed to render listing1" });
     }
 }
 exports.renderListingPage = renderListingPage;
 async function renderSecListingPage(req, res, next) {
-    const data = await (0, node_fetch_1.default)('https://localhost:4000/hotels/read').then((response) => response.json());
+    const data = await (0, node_fetch_1.default)("https://localhost:4000/hotels/read").then((response) => response.json());
     const useData = data.record;
-    res.render('listing2', { useData });
+    res.render("listing2", { useData });
 }
 exports.renderSecListingPage = renderSecListingPage;
-;
