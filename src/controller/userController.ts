@@ -101,22 +101,16 @@ export async function getUsers(req: Request, res: Response, next: NextFunction) 
     const record = await UserInstance.findAndCountAll({
       limit,
       offset,
-      include: [
-        {
-          model: hotelInstance,
-          as: "hotel",
-        },
-      ],
     });
     res.status(200).json({
-      msg: "All Hotels fetched successfully",
+      msg: "All Users fetched successfully",
       count: record.count,
       record: record.rows,
     });
   } catch (error) {
     res.status(500).json({
-      msg: "failed to fetch hotels",
-      route: "/read",
+      msg: "failed to fetch all users",
+      route: "/allusers",
     });
   }
 }

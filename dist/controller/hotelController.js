@@ -34,7 +34,7 @@ async function getHotels(req, res, next) {
     try {
         const limit = req.query?.limit;
         const offset = req.query?.offset;
-        //const record = await hotelInstance.findAll({where: {}})
+        // const record = await hotelInstance.findAll({where: {}})
         const record = await hotel_1.hotelInstance.findAndCountAll({ limit, offset, include: [{
                     model: user_1.UserInstance,
                     attributes: ['id', 'fullName', 'email', 'phoneNumber'],

@@ -8,7 +8,7 @@ const router = express_1.default.Router();
 const userController_1 = require("../controller/userController");
 /* GET users listing. */
 router.post('/register', userController_1.registerUsers);
-router.post('/logins', userController_1.loginUser);
+router.post('/login', userController_1.loginUser);
 router.get('/allusers', userController_1.getUsers);
 router.post('/logout', userController_1.logout);
 // ejs routes

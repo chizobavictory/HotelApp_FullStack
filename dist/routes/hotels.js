@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 const auth_1 = require("../middleware/auth");
 const router = express_1.default.Router();
 const hotelController_1 = require("../controller/hotelController");
-/* GET hotel listing(routers). */
+/* hotel listing routers. */
 router.post('/create', auth_1.auth, hotelController_1.createHotels);
 router.get('/read', hotelController_1.getHotels);
 router.get("/read/:id", hotelController_1.getSingleHotel);
