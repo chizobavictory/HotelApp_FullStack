@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public/Login_v1/')));
 
 
 app.use('/hotels', hotelsRouter);
-app.use('/', usersRouter);
+app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req: Request, res: Response, next: NextFunction) {

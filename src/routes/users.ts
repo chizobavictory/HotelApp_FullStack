@@ -8,7 +8,7 @@ import { loginUser, registerUsers, getUsers, renderRegisterPage, renderLoginPage
 
 /* GET users listing. */
 router.post('/register', registerUsers)
-router.post('/logins', loginUser)
+router.post('/login', loginUser)
 router.get('/allusers',getUsers)
 router.post('/logout', logout)
 

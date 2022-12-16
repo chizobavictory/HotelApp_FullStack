@@ -33,7 +33,7 @@ export async function getHotels(req:Request, res:Response, next:NextFunction){
     try {
         const limit = req.query?.limit as number | undefined
         const offset = req.query?.offset as number | undefined
-        //const record = await hotelInstance.findAll({where: {}})
+        // const record = await hotelInstance.findAll({where: {}})
         const record = await hotelInstance.findAndCountAll({limit, offset, include: 
             [{
             model:UserInstance,
