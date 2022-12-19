@@ -1,4 +1,13 @@
-# EXPRESS
+# FullStack Hotel Listing Application
+
+### Technologies
+- Nodejs
+- Express
+- Typescript
+- Jest
+- Supertest
+- SQLite
+
 
 ### Setup
 
