@@ -1,11 +1,3 @@
-# EXPRESS
-Hotel app built with express and sqlite database, server side rendering...
-### Setup
-
-1. Use and setup the project with `yarn`.
-2. Convert the project to Typescript.
-3. Initialize tsconfig.
-4. Create .gitignore file to ignore the node_modules
 ## Problem Description:
 
 Create A basic Express application, that makes a CRUD operation (create, read, update, delete) using SQLite database, document and publish your endpoints using postman.
