@@ -6,7 +6,7 @@ import logger from 'morgan';
 import db from "./config/database.config";
 
 db.sync().then(() => {
-  console.log('Database connected successfully')
+  console.log('SQLite Database connected successfully')
 }).catch(err => {
   console.log(err)
 })
