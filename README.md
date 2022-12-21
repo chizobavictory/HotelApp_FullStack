@@ -36,9 +36,6 @@ IMPLEMENT AUTHORIZATION AND AUTHENTICATION: PROTECT ALL ROUTES. ONLY THE LOGGED-
   - `POST` Request which adds data to your database file 
   - `PUT` Request which updates fields of a particular data using the id in database
   - `DELETE` Request which removes a particular data from your database using the id
-## Also
-  - This application is hosted on render
-  - https://chizoba-victory-hotel-listing-fullstack.onrender.com/
 
 ```
   {
@@ -81,3 +78,7 @@ IMPLEMENT AUTHORIZATION AND AUTHENTICATION: PROTECT ALL ROUTES. ONLY THE LOGGED-
 - Test for a PUT request
 - Test for a DELETE request
 - Test to return proper HTTP status codes
+
+## Also
+  - This application is hosted on render
+  - https://chizoba-victory-hotel-listing-fullstack.onrender.com/
