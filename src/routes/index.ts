@@ -4,6 +4,6 @@ import { renderHomePage} from "../controller/userController"
 const router = express.Router();
 
 
-router.get('/home', renderHomePage);
+router.get('/', renderHomePage);
 
 export default router;

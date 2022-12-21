@@ -16,10 +16,10 @@ export async function createHotels(req:Request | any, res: Response, next:NextFu
            })
         }
         const record = await hotelInstance.create({id, ...req.body, userId})
-        res.status(201).json({
-            msg: "you have sucessfully created a hotel listing",
-            record
-        })
+        // res.status(201).json({
+        //     msg: "you have sucessfully created a hotel listing",
+        //     record
+        // })
         res.redirect("/users/listing1")
     } catch(err) {
         res.status(500).json({
@@ -49,7 +49,7 @@ export async function getHotels(req:Request, res:Response, next:NextFunction){
     } catch (error) {
         res.status(500).json({
             msg:"failed to fetch hotels",
-            route: "/read"
+            route: "/hotels/read"
         })
     }
 }
