@@ -9,6 +9,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
+    "build": "tsc",
+    "clean": "rm -rf dist && mkdir dist",
     "compile": "tsc -w"
   },
   "dependencies": {

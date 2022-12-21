@@ -82,3 +82,6 @@ IMPLEMENT AUTHORIZATION AND AUTHENTICATION: PROTECT ALL ROUTES. ONLY THE LOGGED-
 ## Also
   - This application is hosted on render
   - https://chizoba-victory-hotel-listing-fullstack.onrender.com/
+
+  - This application is deployed on docker, the docker image is available on docker hub
+  - https://hub.docker.com/layers/vchizoba/hotelapp_fullstack/latest/images/sha256:8301a81ba1bb04667618b8cafccd96f5b17c37e2a940065c74b5e6e22dfa2dc4
