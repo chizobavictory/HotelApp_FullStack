@@ -11,6 +11,7 @@ import {
   renderListingPage,
   renderSecListingPage,
   logout,
+  renderContactPage,
 } from "../controller/userController";
 
 /* GET users listing. */
@@ -22,7 +23,7 @@ router.post("/logout", logout);
 // ejs routes
 router.get("/signup", renderRegisterPage);
 router.get("/signin", renderLoginPage);
-
+router.get("/contact", renderContactPage)
 router.get("/listing1", renderListingPage);
 router.get("/listing2", renderSecListingPage);
 
