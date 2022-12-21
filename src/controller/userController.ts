@@ -86,7 +86,7 @@ export async function loginUser(req:Request, res:Response, next:NextFunction){
             //     token,
             //     hotelUser
             // })
-             res.redirect('/users/home')
+             res.redirect('/')
         }
     } catch (error) {
         res.status(500).json({
