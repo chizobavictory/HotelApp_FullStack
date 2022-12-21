@@ -2,8 +2,13 @@
   "name": "hotelapp_fullstack",
   "version": "0.0.0",
   "private": true,
+  "main": "bin/www",
+  "engines": {
+    "node": ">= 14.0.0"
+  },
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
     "compile": "tsc -w"
   },
   "dependencies": {
