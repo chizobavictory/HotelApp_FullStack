@@ -49,7 +49,7 @@ export async function getHotels(req:Request, res:Response, next:NextFunction){
     } catch (error) {
         res.status(500).json({
             msg:"failed to fetch hotels",
-            route: "/read"
+            route: "/hotels/read"
         })
     }
 }
