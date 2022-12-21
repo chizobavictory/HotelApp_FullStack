@@ -165,3 +165,6 @@ export function renderSecListingPage(req: Request, res: Response, next: NextFunc
     });
 }   
 
+export function renderContactPage(req: Request, res: Response, next: NextFunction) {
+    res.render('contact')
+}
