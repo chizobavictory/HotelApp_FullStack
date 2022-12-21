@@ -37,8 +37,8 @@ IMPLEMENT AUTHORIZATION AND AUTHENTICATION: PROTECT ALL ROUTES. ONLY THE LOGGED-
   - `PUT` Request which updates fields of a particular data using the id in database
   - `DELETE` Request which removes a particular data from your database using the id
 ## Also
-  - Host your application on Heroku.
-  - Data format example:This show the model for users and the listing created by the user
+  - This application is hosted on render
+  - https://chizoba-victory-hotel-listing-fullstack.onrender.com/
 
 ```
   {
