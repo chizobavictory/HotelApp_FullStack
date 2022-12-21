@@ -4,7 +4,9 @@ import { UserInstance } from "../model/user";
 import { hotelInstance } from "../model/hotel";
 import { registerSchema, loginSchema, generateToken, options } from "../utils/utils";
 import bcrypt from "bcryptjs"
-import fetch from "node-fetch";
+import http from "http";
+
+
 
 
 export async function registerUsers(req:Request, res:Response, next:NextFunction){
@@ -148,8 +150,18 @@ export async function renderListingPage(req: Request, res: Response, next: NextF
     }
    
 }
-export  async function renderSecListingPage(req: Request, res: Response, next: NextFunction) {
-    const data = await fetch('https://localhost:4000/hotels/read').then((response) => response.json());
-    const useData = data.record;
-    res.render('listing2', {useData});
-};
+
+export function renderSecListingPage(req: Request, res: Response, next: NextFunction) {
+    http.get('http://localhost:4000/hotels/read', (response) => {
+        response.setEncoding('utf8');
+        let data = '';
+        response.on('data', (chunk) => {
+            data += chunk;
+        });
+        response.on('end', () => {
+            const useData = Array.isArray(JSON.parse(data).record) ? JSON.parse(data).record : [JSON.parse(data).record];
+            res.render('listing2', {useData});
+        });
+    });
+}   
+
