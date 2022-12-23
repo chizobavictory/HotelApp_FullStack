@@ -1,5 +1,7 @@
 # FullStack Hotel Listing Application
 
+https://user-images.githubusercontent.com/43314673/209001216-9374a49c-7ce0-40f6-97e5-f4b4a888f622.mov
+
 ### Technologies
 - Nodejs
 - Express
@@ -87,7 +89,7 @@ IMPLEMENT AUTHORIZATION AND AUTHENTICATION: PROTECT ALL ROUTES. ONLY THE LOGGED-
   - https://hub.docker.com/layers/vchizoba/hotelapp_fullstack/latest/images/sha256:8301a81ba1bb04667618b8cafccd96f5b17c37e2a940065c74b5e6e22dfa2dc4
 
 
-https://user-images.githubusercontent.com/43314673/209001216-9374a49c-7ce0-40f6-97e5-f4b4a888f622.mov
+
 
 
 
